@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
  <meta charset="UTF-8">
- <title>SHIBUYA</title>
+ <title></title>
  <link rel="stylesheet" href="#">
 </head>
 
