@@ -69,5 +69,9 @@
         alert('Please select an option.');
     }
 }
+    </script>
+
+</body>
+</html>
 
 
