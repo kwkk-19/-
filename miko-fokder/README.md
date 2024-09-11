@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Option Selection Example</title>
-  
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -47,31 +46,27 @@
     <!-- ボタン -->
     <button onclick="showSelectedOption()">Show Selected Option</button>
     
-
     <script>
         function showSelectedOption() {
-    // ラジオボタンのリストを取得
-    const options = document.getElementsByName('option');
-    let selectedOption = '';
+            // ラジオボタンのリストを取得
+            const options = document.getElementsByName('option');
+            let selectedOption = '';
 
-    // 選択されたオプションをチェック
-    for (const option of options) {
-        if (option.checked) {
-            selectedOption = option.value;
-            break;
+            // 選択されたオプションをチェック
+            for (const option of options) {
+                if (option.checked) {
+                    selectedOption = option.value;
+                    break;
+                }
+            }
+
+            // 選択されたオプションをダイアログボックスに表示
+            if (selectedOption) {
+                alert('You selected: ' + selectedOption);
+            } else {
+                alert('Please select an option.');
+            }
         }
-    }
-
-    // 選択されたオプションをダイアログボックスに表示
-    if (selectedOption) {
-        alert('You selected: ' + selectedOption);
-    } else {
-        alert('Please select an option.');
-    }
-}
     </script>
-
 </body>
 </html>
-
-
