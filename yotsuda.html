@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Option Selection Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .options label {
+            display: block;
+            margin: 5px 0;
+        }
+
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Choose an Option</h1>
+    
+    <!-- オプションボタン -->
+    <div class="options">
+        <label>
+            <input type="radio" name="option" value="Option 1"> Option 1
+        </label>
+        <label>
+            <input type="radio" name="option" value="Option 2"> Option 2
+        </label>
+        <label>
+            <input type="radio" name="option" value="Option 3"> Option 3
+        </label>
+    </div>
+    
+    <!-- ボタン -->
+    <button onclick="showSelectedOption()">Show Selected Option</button>
+
+    <script>
+        function showSelectedOption() {
+            const radios = document.getElementsByName('option');
+            let selectedOption;
+            for (const radio of radios) {
+                if (radio.checked) {
+                    selectedOption = radio.value;
+                    break;
+                }
+            }
+
+            if (selectedOption) {
+                alert(`選択したオプションは: ${selectedOption}`);
+            } else {
+                alert('オプションを選んでください。');
+            }
+        }
+    </script>
+</body>
+</html>
