@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>チェックボックスの選択結果を表示</title>
+    <style>
+        /* コンテナのスタイル設定 */
+        .checkbox-container {
+            position: relative; /* 相対位置で配置を基準 */
+            width: 500px;  /* コンテナの幅 */
+            height: 300px; /* コンテナの高さ */
+            border: 1px solid #ddd; /* 境界線 */
+            margin-bottom: 20px;
+        }
+
+        /* チェックボックスのスタイル設定 */
+        .checkbox-item {
+            position: absolute; /* 絶対位置で配置 */
+        }
+
+        /* 各チェックボックスの位置設定 */
+        #checkbox1 {
+            top: 50px;
+            left: 50px;
+        }
+
+        #checkbox2 {
+            top: 100px;
+            left: 150px;
+        }
+
+        #checkbox3 {
+            top: 200px;
+            left: 100px;
+        }
+    </style>
+    <script>
+        // チェックボックスの選択状態を確認し、ダイアログボックスで表示する関数
+        function showSelectedCheckboxes() {
+            const checkbox1 = document.getElementById("checkbox1-input");
+            const checkbox2 = document.getElementById("checkbox2-input");
+            const checkbox3 = document.getElementById("checkbox3-input");
+
+            // 選択されたチェックボックスを格納する配列
+            const selectedOptions = [];
+
+            if (checkbox1.checked) selectedOptions.push("オプション1");
+            if (checkbox2.checked) selectedOptions.push("オプション2");
+            if (checkbox3.checked) selectedOptions.push("オプション3");
+
+            // 結果をダイアログボックスに表示
+            if (selectedOptions.length > 0) {
+                alert("選択されたオプション: " + selectedOptions.join(", "));
+            } else {
+                alert("何も選択されていません。");
+            }
+        }
+    </script>
+</head>
+<body>
+
+
+<!-- チェックボックスを配置するコンテナ -->
+<div class="checkbox-container">
+
+    <!-- チェックボックス1 -->
+    <label class="checkbox-item" id="checkbox1">
+        <input type="checkbox" id="checkbox1-input" name="option1"> オプション1
+    </label>
+
+    <!-- チェックボックス2 -->
+    <label class="checkbox-item" id="checkbox2">
+        <input type="checkbox" id="checkbox2-input" name="option2"> オプション2
+    </label>
+
+    <!-- チェックボックス3 -->
+    <label class="checkbox-item" id="checkbox3">
+        <input type="checkbox" id="checkbox3-input" name="option3"> オプション3
+    </label>
+
+</div>
+
+<!-- 結果を表示するボタン -->
+<button onclick="showSelectedCheckboxes()">結果を表示</button>
+
+</body>
+</html>
